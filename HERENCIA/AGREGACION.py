@@ -1,25 +1,30 @@
-class Curso: #se crea una clase nombrada curso
-    def __init__(self,titulo):#se crea una funcion con un contructor con el parametro (titulo)
-        self.__titulo=titulo# se le asigna el parametro al atributo
+class  A1 : # se crea una clase nombrada (A1)
+    def  __init__ ( self ): # se crea un constructor sin parametros
+        pass  # evita que el programa me emita un mensaje
+    def  saludo ( self ): # se crea un metodo sin paramtros
+        print ( 'Hola desde A1' ) # imprimame, hola desde A1
 
-    def getTitulo(self):# se crea un metodo llamado gettitulo sin parametro
-        return self.__titulo #devuelve el valor del parametro
+clase  A2 : #se crea una clase nombrada (A2)
+    def  __init__ ( self ): # se crea un constructor sin parametros
+        pass  # evita que el programa me emita un mensaje
+    def  saludo ( self ): # se crea un metodo sin paramtros
+        print ( 'Hola desde A2' )   # imprimame, hola desde A2
 
-class Aprendiz:# se crea una clase nombrada (aprendriz)
-    def __init__(self,nombre):#se crea un metodo
-        self.__nombre=nombre
-        self.__cursos=[]
 
-    def agregarCurso(self,nombreCursito):
-        cursito=Curso(nombreCursito)
-        self.__cursos.append(cursito)
+class  B ( A2 , A1 ): # se crea una clase nombrada (B) con paramtros de las 2 primeras clases
+    def  __init__ ( self ): # se crea un constructor sin parametros
+        pass  # evita que el programa me emita un mensaje
+    def  saludo ( self ): # se crea un metodo sin paramtros
+        print ( 'Hola desde B' ) #imprimame, hola desde B
+    def  __str__ ( self ): # se crea un método para que me devuelva una cadena de caracteres
+        return  'Soy un objeto de la clase B'  # me devuelve la cadena de caracteres
+obj = B () # se crea un objeto invocando la clase (B)
+print ( obj . __str__ ()) # imprimame, se llama el objeto invocando el metodo para que me devuelva la cadena de caracteres que le asigne
+#obj.saludo()
+#obj.saludo()
 
-    def getCursos(self):
-        return self.__cursos
 
-ap=Aprendiz('Sofia')
-ap.agregarCurso('Python Basico')
-ap.agregarCurso('Python Intermedio')
-
-for c in ap.getCursos():
-    print(c.getTitulo())
+#cad="sena"
+#lista=[1,2,3]
+# imprimir(cad.__str__())
+# imprimir(lista.__str__())
