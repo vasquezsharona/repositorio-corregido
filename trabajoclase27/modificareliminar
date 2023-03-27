@@ -1,0 +1,29 @@
+# funciones 
+def miselect(conexion,campo,operador,dato): #  funcion que tiene 5 parametros 
+   micursor=conexion.cursor()#instanciamos un objeto 
+   sentencia='select*from{tabla} WHERE {campo}{operador}{dato}}'#codigo sql con el que se ingresa a la bd  
+   print(sentencia) # imprime la sentenia
+   print(micursor.execute(sentencia).fetchall())
+
+
+def modificar(con tabla,campo,,dato,id):
+   micursor=con.cursor()
+   sentencia=f"update{tabla}SET {campo}='{dato} WHERE id ='{id}';"
+   micursor.exsecute(sentencia)
+   con.commit()# este metoodo se usa para modificar 
+   print('modificacion correcta')
+
+
+
+def eliminar(con,tabla,campo,dato):
+   micursor=con.cursor()
+   sentencia=f"DELETE FROM {tabla} WHERE {campo}='{dato}'"
+   micursor.execute(sentencia)
+   con.commit()#
+   print('eliminacion correcta')
+
+
+
+miselect(con,'alumno','email','=''dbranbon2@irs.gov')#se llama la funcion con los parametros necesario
+modificar ( con,'alumno','nombre','vegeta',1)
+eliminar(con,'alumno','id',3)
